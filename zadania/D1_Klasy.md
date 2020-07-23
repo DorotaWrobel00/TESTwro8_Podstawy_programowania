@@ -69,26 +69,26 @@ Utwóżmy 2 rozszerzenia klasy Identification document: Passport oraz IdCard
    - nazwa
 3. Proszę dodać gettery settery oraz metodę toString
 
-# 6 Referencja departamentu do pracowników (10 min)
+# 8 Referencja departamentu do pracowników (10 min)
 1. Departament ma jednego szefa proszę dodać referencję boss do klasy pracownik
 2. Departament może mieć wielu pracowników, zwykle używmy do tego celu kolekcji.
     Są to rozszerzenia klasy java.util.Collection. Proponuję użycie java.util.List w implementacji ArrayList.
 4. Proszę dodać do metody toString szefa oraz listy pracowników
 
-# 7 Wprowadzenie klasy Company (10 min)
+# 9 Wprowadzenie klasy Company (10 min)
 1. Proszę dodać klasę Company, która będzie reprezentowała firmę
 2. Firma składa się z departamentów oraz nazwy. Proszę dodać adekwatne pola, gettery, settery oraz toString.
 3. Proszę dodać metodę createDepartment z parametrem name.
 4. Proszę aby metoda tworzyła obiekt departament.
 
-# 8 Test Company (10 min)
+# 10 Test Company (10 min)
 1. Proszę dodać metodę testCompany
 2. Proszę w ciele metody testCompany utworzyć obiekt Company
 3. Metoda test company powinna stworzyć obiekt company oraz wywołać na obiekcie metodę add department
 4. Nstępnie metoda test company powinna wyświetlić firmę na ekranie oraz przypisać pole statyczne do klasy Test z referencją do Company
 5. Proszę dodać metodę testCompany do metodyMain klasy Test
 
-# 9 Metoda dodająca pracownika (15 min)
+# 11 Metoda dodająca pracownika (15 min)
 1. Proszę dodać metodę findDepartment przyjmującą paraemetr department name i zwracającą z listy departament, który ma taką nazwę
 2. Dla podpowiedzi List implementuje Iterable co pozwala na następujący for:
    ```for (Object object : listOfObjects) {  }```
@@ -97,17 +97,17 @@ Utwóżmy 2 rozszerzenia klasy Identification document: Passport oraz IdCard
 5. Metoda addEmployee powinna dodać pracownika do listy pracowników departamentu
 
 
-# 10 metoda test add employee (5 min)
+# 12 metoda test add employee (5 min)
 1. W klasie Test proszę przygotować metodę testAddEmployee
 2. W ciele tej metody proszę stworzyć obiekt klasy employee podając maksymalnie dużo danych o pracowniku
 3. Proszę wywołać metodę addEmployee na klasie Company z parametrami nazwa departamentu i nowo utworzonym obiekcie Employee
 4. Proszę dodać metoę testAddEmployee do metody main klasy Test
 
-# 11 Metoda add boss to department (5 min)
+# 13 Metoda add boss to department (5 min)
 1. W klasie Company proszę utworzyć metodę addBoss przyjmującą nazwę departamentu i obiekt klasy employee
 2. W metodzie proszę znaeleźć departament używając metody findDepartment i ustawić pole boss obiektem employee z parametru
 
-# 12 Test add boss (5 min)
+# 14 Test add boss (5 min)
 1. W Klasie Test proszę przygotować metodę testAddBoss
 2. W ciele metody proszę utworzyć pracownika z rolą boss
 3. Proszę wywołać metodę Companny addBoss z nazwą departamentu i nowo utworzonym obiektem employee
