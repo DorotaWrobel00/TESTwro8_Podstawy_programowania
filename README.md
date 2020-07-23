@@ -118,4 +118,27 @@ Temat 6. będie pierwszym tematem wykładu teoretycznego w dniu 2.
 
    [Zadanie 7](./lesson2/src/pl/sda/humans/Human.java)
 
+
    [Zadanie 8](./lesson2/src/pl/sda/test/Test.java)
+
+
+## materiały do nauki
+
+Tak jak obiecałem dostarczam trochę ktodu, który nie daliśmy rady przerobić na zajęciach a może wzbogacić Waszą wiedzę.
+Mały tutorial jak przez to przejść:
+
+1. Zadanie z ciągiem fibonacciego wykonane zostało w klasie: [Fibonacci](./lesson2/src/Fibonacci.java)
+
+2. Kontynuacja zadań z tworzeniem klas powinna być przeglądana w kolejności jak zadania
+3. Informację, którego zadania dotyczy kod umieszczałem nad klasą lub metodą, która w ramach realzacji zadania postała
+4. Wszystkie stworzone klasy, które stworzyłem są wykorzystane w klasie [Test](./lesson2/src/pl/sda/test/Test.java) tam też są metody "testowe", które tworzą i wyświetlają obiekty kolejnych klas
+5. Co do samych klas polecam przeglądać je w kolejności:
+   - [Human](./lesson2/src/pl/sda/humans/Human.java)
+   - [IdentificationDocument](./lesson2/src/pl/sda/humans/IdentificationDocument.java)
+   - [Passport](./lesson2/src/pl/sda/humans/Passport.java)
+   - [IdCard](./lesson2/src/pl/sda/humans/IdCard.java)
+   - [Employee](./lesson2/src/pl/sda/company/Employee.java)
+   - [Department](./lesson2/src/pl/sda/company/Department.java)
+   - [Company](./lesson2/src/pl/sda/company/Company.java)
+
+

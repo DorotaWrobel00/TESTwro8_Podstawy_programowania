@@ -89,10 +89,10 @@ Utwóżmy 2 rozszerzenia klasy Identification document: Passport oraz IdCard
 5. Proszę dodać metodę testCompany do metodyMain klasy Test
 
 # 11 Metoda dodająca pracownika (15 min)
-1. Proszę dodać metodę findDepartment przyjmującą paraemetr department name i zwracającą z listy departament, który ma taką nazwę
+1. Do klasy Company proszę dodać metodę findDepartment przyjmującą paraemetr department name i zwracającą z listy departament, który ma taką nazwę
 2. Dla podpowiedzi List implementuje Iterable co pozwala na następujący for:
    ```for (Object object : listOfObjects) {  }```
-3. Proszę przygotować metodę addEmployee, która przyjmie parametry departmentName, employee
+3. Do klasy Company proszę przygotować metodę addEmployee, która przyjmie parametry departmentName, employee
 4. Metoda addEmployee powinna wykorzystać departmentName do wyszukania departamentu metodą findDepartment
 5. Metoda addEmployee powinna dodać pracownika do listy pracowników departamentu
 
@@ -100,7 +100,7 @@ Utwóżmy 2 rozszerzenia klasy Identification document: Passport oraz IdCard
 # 12 metoda test add employee (5 min)
 1. W klasie Test proszę przygotować metodę testAddEmployee
 2. W ciele tej metody proszę stworzyć obiekt klasy employee podając maksymalnie dużo danych o pracowniku
-3. Proszę wywołać metodę addEmployee na klasie Company z parametrami nazwa departamentu i nowo utworzonym obiekcie Employee
+3. Proszę wywołać metodę addEmployee na obiekcie klasy Company z parametrami nazwa departamentu i nowo utworzonym obiekcie Employee
 4. Proszę dodać metoę testAddEmployee do metody main klasy Test
 
 # 13 Metoda add boss to department (5 min)

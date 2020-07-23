@@ -1,8 +1,7 @@
 // pakiet, w której umieszczona jest klasa test. Pakiety tworzymy: prawy przycisk myszy na src -> new -> package -> nazwa pakietu ciągi liter (mogą być też cyfry) rozdzielone .
 package pl.sda.test;
 
-// import naszej klasy Human, która jest w innym pakiecie niż klasa Test
-
+// importy klas, które używamy w klasie Test a nie są w wym samym pakiecie. Jak widzisz są tu też klasy, które utworzyliśmy my :)
 import pl.sda.company.Company;
 import pl.sda.company.Employee;
 import pl.sda.humans.Human;
@@ -10,12 +9,15 @@ import pl.sda.humans.IdCard;
 import pl.sda.humans.IdentificationDocument;
 import pl.sda.humans.Passport;
 
+// ale też i takie z API Javy
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Test {
+    // pole statyczne w klasie potrzebne od zadania 10 listy D1
     public static Company company;
+
     /*
     Realizacja zadania 2 Test Human  z listy D1
      */
@@ -65,40 +67,52 @@ public class Test {
     }
 
     /* zadanie 6 z listy D1 */
-    public static void testEmployee() {
-        Employee employee = new Employee(2);
-        employee.setName("Tomasz");
-        employee.setSurname("Lis");
-        employee.setPersonalIdentityNumber("1234567890");
-        employee.setSystemId(1);
-        employee.setRole("Tech Lead");
-        List<IdentificationDocument> documents = new ArrayList<>();
-        IdCard identificationDocument = new IdCard();
-        identificationDocument.setSeries("AEQ");
-        identificationDocument.setNumber("123512");
-        identificationDocument.setIssueDate(LocalDate.now());
-        identificationDocument.setExpirationDate(LocalDate.now().plusYears(10));
-        identificationDocument.setType(IdentificationDocument.Type.ID_CARD);
-        documents.add(identificationDocument);
-        employee.setDocuments(documents);
-        System.out.println(employee);
+    public static Employee testEmployee() {
+        Employee employee = new Employee(2); // utworzenie pracownika i przypisanie do zmiennej
+        employee.setName("Tomasz"); // ustawienie imienia
+        employee.setSurname("Lis"); // ustawienie nazwiska
+        employee.setPersonalIdentityNumber("1234567890"); // ustawienie peselu
+        employee.setSystemId(1); // ustawienie  numeru sytemowego
+        employee.setRole("Tech Lead"); // ustawienie roli
+        List<IdentificationDocument> documents = new ArrayList<>(); // storzenie obiektu klasy ArrayList i przypisanie do zmiennej documents o interface List
+        /*
+            Interface List jest implementowany przez kilka klas między innymi ArrayList, dlatego do zmiennej tego typu można przypisać obiekt klasy ArrayList.
+         */
+        IdCard identificationDocument = new IdCard(); // utworzenie dowodu osobistego
+        identificationDocument.setSeries("AEQ"); // ustawienie serii dowodu osobistego
+        identificationDocument.setNumber("123512"); // ustawienie numeru dowodu osobistego
+        identificationDocument.setIssueDate(LocalDate.now()); // ustawienie  daty dokumentu tożsamości. Pamiętasz co dawała metoda LocalDate.now()
+        identificationDocument.setExpirationDate(LocalDate.now().plusYears(10)); // ustawienie daty ważności dokumentu. Pamiętasz co oznacza LocalDate.now().plusYears(10)?
+        identificationDocument.setType(IdentificationDocument.Type.ID_CARD); // ustawienie typu dokumentu
+        documents.add(identificationDocument); // dodanie dokumentu do zmiennej documents (jest to lista) przy pomocy metody add deklarowanej przez interface List a impleentowanej przez klasę ArrayList
+        employee.setDocuments(documents); // ustawienie dokumentów pracownika listą documents stworzoną wcześniej
+        System.out.println(employee); // wyświetlenie utworzonego pracownika
+        return employee;  // aby ułatwić sobie kolejne zadanie zwracamy employee. Myślę, że zrozumiesz gdy dojdziesz do zadania 12 z listy d1.
     }
 
     // zadanie 10 lista d1
-    /*
+    public static void testCompany() {
+        company = new Company(); // utworenie obiektu klasy Company i podstawienie referencji w statycznym polu company w klasie Test
+        company.setName("Google"); // ustawienie nazwy
+        company.addDepartment("IT"); // dodanie departamentu przy pomocy metody addDepartment na obiekcie company
+        System.out.println(company); // wyświetlene firmy
+    }
 
-# 10 Test Company (10 min)
-1. Proszę dodać metodę testCompany
-2. Proszę w ciele metody testCompany utworzyć obiekt Company
-3. Metoda test company powinna stworzyć obiekt company oraz wywołać na obiekcie metodę add department
-4. Nstępnie metoda test company powinna wyświetlić firmę na ekranie oraz przypisać pole statyczne do klasy Test z referencją do Company
-5. Proszę dodać metodę testCompany do metodyMain klasy Test
-     */
-    public static void testCompany(){
-        company = new Company();
-        company.setName("Google");
-        company.addDepartment("IT");
-        System.out.println(company);
+    // zadanie 12 lista d1
+    public static void testAddEmployee() {
+        Employee employee = testEmployee(); // wykorzystanie wcześniej przygotowanej metody, w której tworzyliśmy pracownika (wtedy ustawiliśmy wszystkie pola)
+        company.addEmployee("IT", employee); // wywołanie metody add employee
+        System.out.println(company); // ponowne wyświetlenie zawartości obiektu, który jest statycznie referencjonowany w polu statycznym w klasie Test
+    }
+
+    // zadanie 14 lista d1
+    public static void testAddBoss() {
+        Employee boss = new Employee(3); // stworzenie obiektu boss klasy Employee
+        boss.setName("Boss"); // ustawienie  imienia
+        boss.setSurname("Bosski"); // ustawienie nazwiska
+        boss.setRole("Boss"); // ustawienie roli Boss
+        company.addBoss("IT", boss); // wywołanie metody add boss na obiekcie klasy Company, która jest polem statycznym w klasie Test
+        System.out.println(company); // wyświetlenie firmy ponownie
     }
 
     //metoda main służy nam do wywołania metod "testowych", które wyświetlą nam tworzone obiekty
@@ -110,11 +124,14 @@ public class Test {
         System.out.println("Testuję dowód osobisty: ");
         testIdCard(); // wywołanie kolejnej metody z zadania numer 4
         System.out.println("Testuję prawo jazdy: ");
-        testDrivingLicence();
+        testDrivingLicence(); // wywołanie meotdy z zadnia 4
         System.out.println("Testuję pracownika: ");
-        testEmployee();
+        testEmployee(); // wywołanie metody z zadania 6
         System.out.println("Testuję firmę: ");
-        testCompany();
-
+        testCompany(); // wywołanie metody z zandania 10
+        System.out.println("Testuję dodanie pracownika: ");
+        testAddEmployee(); // wywołanie metody z zadania 12
+        System.out.println("Testuję dodanie szefa: ");
+        testAddBoss(); // wywołanie metody z zadania 14
     }
 }
