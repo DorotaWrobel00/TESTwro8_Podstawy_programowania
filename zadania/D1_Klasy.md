@@ -73,7 +73,6 @@ Utwóżmy 2 rozszerzenia klasy Identification document: Passport oraz IdCard
 1. Departament ma jednego szefa proszę dodać referencję boss do klasy pracownik
 2. Departament może mieć wielu pracowników, zwykle używmy do tego celu kolekcji.
     Są to rozszerzenia klasy java.util.Collection. Proponuję użycie java.util.List w implementacji ArrayList.
-3. Proszę dodać metodę addDepartment, która będzie przyjmowała parametr departmentName, tworzyła obiekt departamentu i przypisywała obiekt do listy departamentów
 4. Proszę dodać do metody toString szefa oraz listy pracowników
 
 # 7 Wprowadzenie klasy Company (10 min)
