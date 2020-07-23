@@ -1,17 +1,19 @@
 // pakiet w której znajduje się klasa Human. Pakiety tworzymy: prawy przycisk myszy na src -> new -> package -> nazwa pakietu ciągi liter (mogą być też cyfry) rozdzielone .
 package pl.sda.humans;
 
+import java.util.List;
+
 /**
  * Klasa human wykonana w ramach zadania 1 Klasa Human z listy D1
  *
  */
 public class Human {
     // pola klasy
-    private final long id; // pole id jest finalne - inicjalizacja musi być wykonana wraz utworzeniem obiektu. dlatego też nie będzie miało settera
-    private String name; // pole imienia
-    private String surname; // pole nazwiska
-    private String personalIdentityNumber; // pole peselu
-
+    protected final long id; // pole id jest finalne - inicjalizacja musi być wykonana wraz utworzeniem obiektu. dlatego też nie będzie miało settera
+    protected String name; // pole imienia
+    protected String surname; // pole nazwiska
+    protected String personalIdentityNumber; // pole peselu
+    protected List<IdentificationDocument> documents;
     /**
      * Metoda konstruktora parametryzowana wymaganym parametrem id
      * @param id - wymagany parametr konstruktora
@@ -81,6 +83,14 @@ public class Human {
         return id; // skład gettera tradycyjny - po prostu zwracamy wartość pola
     }
 
+    public List<IdentificationDocument> getDocuments() {
+        return documents;
+    }
+
+    public void setDocuments(List<IdentificationDocument> documents) {
+        this.documents = documents;
+    }
+
     // metoda to string została wygenerowana poprzez alt+insert -> toString -> wybranie wszystkich pól
     /**
      * metoda to string to specjalna metoda do konwersji wartości klasy do stringa
@@ -93,6 +103,7 @@ public class Human {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", personalIdentityNumber='" + personalIdentityNumber + '\'' +
+                ", documents=" + documents +
                 '}';
     }
 }

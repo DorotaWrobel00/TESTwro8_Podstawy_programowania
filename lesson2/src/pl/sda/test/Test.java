@@ -3,6 +3,7 @@ package pl.sda.test;
 
 // import naszej klasy Human, która jest w innym pakiecie niż klasa Test
 
+import pl.sda.company.Employee;
 import pl.sda.humans.Human;
 import pl.sda.humans.IdCard;
 import pl.sda.humans.IdentificationDocument;
@@ -10,6 +11,8 @@ import pl.sda.humans.Passport;
 
 import java.time.LocalDate;
 import java.time.temporal.TemporalUnit;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Test {
     /*
@@ -60,6 +63,26 @@ public class Test {
         System.out.println(drivingLicence); // wyświetlenie prawa jazdy
     }
 
+    /* zadanie 6 z listy D1 */
+    public static void testEmployee() {
+        Employee employee = new Employee(2);
+        employee.setName("Tomasz");
+        employee.setSurname("Lis");
+        employee.setPersonalIdentityNumber("1234567890");
+        employee.setSystemId(1);
+        employee.setRole("Tech Lead");
+        List<IdentificationDocument> documents = new ArrayList<>();
+        IdCard identificationDocument = new IdCard();
+        identificationDocument.setSeries("AEQ");
+        identificationDocument.setNumber("123512");
+        identificationDocument.setIssueDate(LocalDate.now());
+        identificationDocument.setExpirationDate(LocalDate.now().plusYears(10));
+        identificationDocument.setType(IdentificationDocument.Type.ID_CARD);
+        documents.add(identificationDocument);
+        employee.setDocuments(documents);
+        System.out.println(employee);
+    }
+
     //metoda main służy nam do wywołania metod "testowych", które wyświetlą nam tworzone obiekty
     public static void main(String[] args) {
         System.out.println("Testuję osobę: ");
@@ -70,5 +93,8 @@ public class Test {
         testIdCard(); // wywołanie kolejnej metody z zadania numer 4
         System.out.println("Testuję prawo jazdy: ");
         testDrivingLicence();
+        System.out.println("Testuję pracownika: ");
+        testEmployee();
+
     }
 }
