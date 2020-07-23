@@ -77,9 +77,9 @@ Utwóżmy 2 rozszerzenia klasy Identification document: Passport oraz IdCard
 
 # 9 Wprowadzenie klasy Company (10 min)
 1. Proszę dodać klasę Company, która będzie reprezentowała firmę
-2. Firma składa się z departamentów oraz nazwy. Proszę dodać adekwatne pola, gettery, settery oraz toString.
-3. Proszę dodać metodę createDepartment z parametrem name.
-4. Proszę aby metoda tworzyła obiekt departament.
+2. Firma składa się z listy departamentów oraz nazwy. Proszę dodać adekwatne pola, gettery, settery oraz toString.
+3. Proszę dodać metodę addDepartment z parametrem name.
+4. Proszę aby metoda tworzyła obiekt departament i dodawała do listy departamentów.
 
 # 10 Test Company (10 min)
 1. Proszę dodać metodę testCompany

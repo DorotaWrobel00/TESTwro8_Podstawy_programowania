@@ -3,6 +3,7 @@ package pl.sda.test;
 
 // import naszej klasy Human, która jest w innym pakiecie niż klasa Test
 
+import pl.sda.company.Company;
 import pl.sda.company.Employee;
 import pl.sda.humans.Human;
 import pl.sda.humans.IdCard;
@@ -10,11 +11,11 @@ import pl.sda.humans.IdentificationDocument;
 import pl.sda.humans.Passport;
 
 import java.time.LocalDate;
-import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Test {
+    public static Company company;
     /*
     Realizacja zadania 2 Test Human  z listy D1
      */
@@ -83,6 +84,23 @@ public class Test {
         System.out.println(employee);
     }
 
+    // zadanie 10 lista d1
+    /*
+
+# 10 Test Company (10 min)
+1. Proszę dodać metodę testCompany
+2. Proszę w ciele metody testCompany utworzyć obiekt Company
+3. Metoda test company powinna stworzyć obiekt company oraz wywołać na obiekcie metodę add department
+4. Nstępnie metoda test company powinna wyświetlić firmę na ekranie oraz przypisać pole statyczne do klasy Test z referencją do Company
+5. Proszę dodać metodę testCompany do metodyMain klasy Test
+     */
+    public static void testCompany(){
+        company = new Company();
+        company.setName("Google");
+        company.addDepartment("IT");
+        System.out.println(company);
+    }
+
     //metoda main służy nam do wywołania metod "testowych", które wyświetlą nam tworzone obiekty
     public static void main(String[] args) {
         System.out.println("Testuję osobę: ");
@@ -95,6 +113,8 @@ public class Test {
         testDrivingLicence();
         System.out.println("Testuję pracownika: ");
         testEmployee();
+        System.out.println("Testuję firmę: ");
+        testCompany();
 
     }
 }

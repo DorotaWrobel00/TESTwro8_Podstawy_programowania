@@ -11,7 +11,7 @@ public class Company {
     private String name;
     private List<Department> departments = new ArrayList<>();
 
-    public void createDepartment(String name){
+    public void addDepartment(String name){
         Department department = new Department();
         department.setName(name);
         department.setEmployees(new ArrayList<>());
